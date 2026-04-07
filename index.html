@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASCA Global – Consultoría Estratégica para Clubes de Fútbol</title>
+<meta name="description" content="Andes Sports Consulting Agency. Consultoría estratégica para clubes de fútbol. Partners & Comercial, Ticketing, Fan Engagement.">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;background:#fff;color:#1a1a2e;overflow-x:hidden;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+:root{
+  --primary:#1a1a2e;
+  --primary-fg:#ffffff;
+  --accent:#c8a84b;
+  --accent-fg:#1a1a2e;
+  --bg:#ffffff;
+  --bg-secondary:#f5f5f0;
+  --fg:#1a1a2e;
+  --muted:#6b7280;
+  --border:#e5e5e5;
+}
+
+.font-display{font-family:'Barlow Condensed',sans-serif}
+.section-padding{padding:6rem 1.5rem}
+@media(min-width:768px){.section-padding{padding:7rem 3rem}}
+
+/* ── NAV ─────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  transition:all .3s;
+}
+nav.scrolled{background:rgba(26,26,46,.95);backdrop-filter:blur(12px);box-shadow:0 4px 30px rgba(0,0,0,.2)}
+.nav-inner{
+  max-width:1280px;margin:0 auto;
+  padding:0 1.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  height:80px;
+}
+@media(min-width:768px){.nav-inner{padding:0 3rem}}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo-text{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:800;font-size:1.5rem;
+  letter-spacing:.05em;color:#fff;
+}
+.nav-logo-sub{font-size:.6rem;color:var(--accent);letter-spacing:.2em;text-transform:uppercase;font-weight:600;display:block;margin-top:-4px}
+.nav-links{display:none}
+@media(min-width:1024px){
+  .nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}
+}
+.nav-links a{
+  color:rgba(255,255,255,.7);text-decoration:none;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:.75rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;
+  transition:color .2s;
+}
+.nav-links a:hover{color:#fff}
+.nav-mobile-btn{
+  display:flex;align-items:center;justify-content:center;
+  background:none;border:none;color:#fff;cursor:pointer;
+  padding:4px;
+}
+@media(min-width:1024px){.nav-mobile-btn{display:none}}
+.nav-mobile-menu{
+  display:none;
+  background:rgba(26,26,46,.97);backdrop-filter:blur(12px);
+  border-top:1px solid rgba(255,255,255,.1);
+}
+.nav-mobile-menu.open{display:block}
+.nav-mobile-inner{padding:1rem 1.5rem;display:flex;flex-direction:column;gap:1rem}
+.nav-mobile-inner a{
+  color:rgba(255,255,255,.7);text-decoration:none;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:.75rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;
+  transition:color .2s;
+}
+.nav-mobile-inner a:hover{color:#fff}
+
+/* ── HERO ─────────────────────────────────────────── */
+#inicio{
+  position:relative;min-height:100vh;
+  display:flex;align-items:center;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=1920&q=80') center center/cover no-repeat;
+}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:rgba(26,26,46,.82);
+}
+.hero-grid{
+  position:absolute;inset:0;opacity:.04;
+  background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+.hero-content{
+  position:relative;z-index:10;
+  max-width:1280px;margin:0 auto;
+  padding:6rem 1.5rem 8rem;
+  width:100%;
+}
+@media(min-width:768px){.hero-content{padding:6rem 3rem 8rem 5rem}}
+.hero-inner{max-width:760px}
+.hero-line{width:64px;height:2px;background:var(--accent);margin-bottom:2.5rem}
+.hero-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:800;
+  font-size:clamp(2.5rem,5vw,3.5rem);
+  color:#fff;line-height:1.15;
+  letter-spacing:-.01em;margin-bottom:2rem;
+}
+.hero-desc{
+  color:rgba(255,255,255,.7);
+  font-size:clamp(1rem,2vw,1.2rem);
+  line-height:1.75;margin-bottom:1.5rem;max-width:640px;
+}
+.hero-tagline{
+  color:var(--accent);font-size:.875rem;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;margin-bottom:3rem;
+}
+.hero-fade{
+  position:absolute;bottom:0;left:0;right:0;height:96px;
+  background:linear-gradient(to top,#fff,transparent);
+}
+
+/* ── BUTTONS ─────────────────────────────────────── */
+.btn-accent{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--accent);color:var(--accent-fg);
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:.75rem;
+  letter-spacing:.2em;text-transform:uppercase;
+  padding:1rem 2.5rem;
+  border:none;cursor:pointer;text-decoration:none;
+  transition:filter .2s,transform .2s;
+}
+.btn-accent:hover{filter:brightness(1.1);transform:scale(1.02)}
+.btn-accent:active{transform:scale(.98)}
+
+/* ── SECTIONS ────────────────────────────────────── */
+.sec-wrap{max-width:1280px;margin:0 auto}
+.sec-wrap-sm{max-width:1100px;margin:0 auto}
+.sec-line{width:48px;height:2px;background:var(--accent);margin-bottom:1.5rem}
+.sec-label{
+  color:var(--accent);font-size:.75rem;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  display:block;margin-bottom:1.5rem;
+}
+.sec-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:800;
+  font-size:clamp(2rem,4vw,2.75rem);
+  line-height:1.15;letter-spacing:-.01em;
+  color:var(--fg);margin-bottom:1rem;
+}
+.sec-title-white{color:#fff}
+.sec-sub{color:var(--muted);max-width:640px;line-height:1.75;margin-bottom:5rem}
+
+/* ── ABOUT ───────────────────────────────────────── */
+#quienes-somos{background:var(--bg)}
+.about-grid{display:grid;gap:5rem;margin-top:3rem}
+@media(min-width:1024px){.about-grid{grid-template-columns:1fr 1fr}}
+.about-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:800;font-size:clamp(1.75rem,3vw,2.25rem);
+  color:var(--fg);line-height:1.2;
+}
+.about-text{display:flex;flex-direction:column;gap:1.5rem;color:var(--muted);line-height:1.8}
+.about-text strong{color:var(--fg)}
+
+/* ── SERVICES ────────────────────────────────────── */
+#servicios{background:var(--bg-secondary)}
+.services-grid{display:grid;gap:2rem}
+@media(min-width:768px){.services-grid{grid-template-columns:repeat(3,1fr)}}
+.service-card{
+  background:var(--bg);
+  padding:2.5rem 3rem;
+  display:flex;flex-direction:column;gap:1.25rem;
+  border-radius:12px;
+  border:1px solid var(--border);
+  transition:border-color .3s;
+}
+.service-card:hover{border-color:rgba(200,168,75,.5)}
+.service-card h3{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:1rem;
+  color:var(--fg);line-height:1.2;
+}
+.service-lead{color:rgba(26,26,46,.8);font-size:.9375rem;font-weight:500;line-height:1.65}
+.service-desc{color:var(--muted);font-size:.9375rem;line-height:1.65}
+
+/* ── METHODOLOGY ─────────────────────────────────── */
+#metodologia{background:var(--bg)}
+.method-grid{display:grid;gap:3rem}
+@media(min-width:768px){.method-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){.method-grid{grid-template-columns:repeat(4,1fr)}}
+.method-num{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:800;font-size:3rem;
+  color:rgba(200,168,75,.3);margin-bottom:.75rem;
+  line-height:1;
+}
+.method-divider{width:100%;height:1px;background:var(--border);margin-bottom:1.5rem}
+.method-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:1rem;
+  color:var(--fg);margin-bottom:1.25rem;
+}
+.method-list{list-style:none;display:flex;flex-direction:column;gap:.75rem}
+.method-list li{
+  color:var(--muted);font-size:.875rem;
+  display:flex;align-items:flex-start;gap:.75rem;
+  line-height:1.5;
+}
+.method-dot{width:4px;height:4px;background:var(--accent);margin-top:.5rem;flex-shrink:0}
+
+/* ── TEAM ────────────────────────────────────────── */
+#equipo{background:var(--bg-secondary)}
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:2rem;
+}
+@media(min-width:768px){.team-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1024px){.team-grid{grid-template-columns:repeat(5,1fr)}}
+.team-member{display:flex;flex-direction:column;align-items:center;text-align:center}
+.team-avatar{
+  width:112px;height:112px;border-radius:50%;
+  background:rgba(26,26,46,.1);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1.25rem;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:.75rem;
+  color:rgba(26,26,46,.3);
+}
+.team-name{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:.875rem;
+  color:var(--fg);margin-bottom:.25rem;
+}
+.team-role{color:var(--muted);font-size:.75rem;margin-bottom:.75rem}
+.team-li{
+  color:var(--muted);transition:color .2s;
+  display:inline-flex;
+}
+.team-li:hover{color:var(--accent)}
+.team-li svg{width:16px;height:16px}
+
+/* ── WHY ASCA ────────────────────────────────────── */
+.why-bg{background:var(--bg)}
+.why-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1.5rem 4rem;
+  max-width:768px;
+}
+@media(min-width:640px){.why-grid{grid-template-columns:1fr 1fr}}
+.why-item{display:flex;align-items:flex-start;gap:1rem}
+.why-check{
+  width:20px;height:20px;flex-shrink:0;margin-top:2px;
+  color:var(--accent);
+}
+.why-item span{color:var(--fg);font-size:.9375rem;line-height:1.65}
+
+/* ── CTA BAND ────────────────────────────────────── */
+.cta-band{
+  padding:5rem 1.5rem 7rem;
+  background:var(--primary);text-align:center;
+}
+@media(min-width:768px){.cta-band{padding:7rem 3rem}}
+.cta-band h2{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:800;font-size:clamp(1.5rem,3vw,2rem);
+  color:#fff;line-height:1.3;margin-bottom:1rem;max-width:600px;margin-left:auto;margin-right:auto;
+}
+.cta-band p{color:rgba(255,255,255,.6);margin-bottom:2.5rem}
+
+/* ── CONTACT ─────────────────────────────────────── */
+#contacto{padding:6rem 1.5rem;background:var(--primary)}
+@media(min-width:768px){#contacto{padding:7rem 3rem}}
+.contact-grid{display:grid;gap:5rem;max-width:1280px;margin:0 auto}
+@media(min-width:1024px){.contact-grid{grid-template-columns:1fr 1fr}}
+.contact-mail{
+  display:flex;align-items:center;gap:.75rem;
+  color:rgba(255,255,255,.8);
+}
+.contact-mail svg{width:20px;height:20px;color:var(--accent);flex-shrink:0}
+.contact-mail a{
+  color:rgba(255,255,255,.8);text-decoration:none;
+  font-size:.875rem;transition:color .2s;
+}
+.contact-mail a:hover{color:var(--accent)}
+.form-field{display:flex;flex-direction:column;gap:.5rem}
+.form-label{
+  color:rgba(255,255,255,.5);
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:.75rem;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;
+}
+.form-input{
+  width:100%;background:transparent;
+  border:none;border-bottom:1px solid rgba(255,255,255,.2);
+  padding:.75rem 0;
+  color:#fff;font-size:.875rem;
+  font-family:'Barlow',sans-serif;
+  outline:none;transition:border-color .2s;
+}
+.form-input:focus{border-color:var(--accent)}
+.form-input::placeholder{color:rgba(255,255,255,.3)}
+textarea.form-input{resize:none}
+.form{display:flex;flex-direction:column;gap:1.5rem}
+
+/* ── FOOTER ──────────────────────────────────────── */
+footer{
+  background:var(--fg);
+  padding:4rem 1.5rem;
+}
+@media(min-width:768px){footer{padding:4rem 3rem}}
+.footer-grid{
+  max-width:1280px;margin:0 auto;
+  display:grid;gap:3rem;
+}
+@media(min-width:768px){.footer-grid{grid-template-columns:repeat(3,1fr);align-items:start}}
+.footer-logo-text{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:800;font-size:1.4rem;
+  letter-spacing:.05em;color:#fff;
+  margin-bottom:1.5rem;display:block;
+}
+.footer-tagline{color:rgba(255,255,255,.4);font-size:.875rem;line-height:1.65}
+.footer-col-label{
+  color:rgba(255,255,255,.4);
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:.75rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;
+  margin-bottom:1rem;display:block;
+}
+.footer-link{
+  color:rgba(255,255,255,.6);text-decoration:none;
+  font-size:.875rem;transition:color .2s;
+  display:inline-flex;align-items:center;gap:.5rem;
+}
+.footer-link:hover{color:var(--accent)}
+.footer-divider{
+  border:none;border-top:1px solid rgba(255,255,255,.1);
+  margin:3rem 0 2rem;max-width:1280px;margin-left:auto;margin-right:auto;
+}
+.footer-copy{
+  max-width:1280px;margin:0 auto;
+  color:rgba(255,255,255,.3);font-size:.75rem;
+}
+
+/* ── FADE ANIMATION ──────────────────────────────── */
+.fade{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade.visible{opacity:1;transform:translateY(0)}
+
+/* SVG ICONS */
+.icon{display:inline-block;vertical-align:middle}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#inicio" class="nav-logo">
+      <div>
+        <span class="nav-logo-text">ASCA</span>
+        <span class="nav-logo-sub">Andes Sports Consulting Agency</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#quienes-somos">Quiénes Somos</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#metodologia">Metodología</a></li>
+      <li><a href="#equipo">Equipo</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <button class="nav-mobile-btn" onclick="toggleMenu()" aria-label="Menu">
+      <svg id="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg id="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="nav-mobile-menu" id="mobile-menu">
+    <div class="nav-mobile-inner">
+      <a href="#inicio" onclick="closeMenu()">Inicio</a>
+      <a href="#quienes-somos" onclick="closeMenu()">Quiénes Somos</a>
+      <a href="#servicios" onclick="closeMenu()">Servicios</a>
+      <a href="#metodologia" onclick="closeMenu()">Metodología</a>
+      <a href="#equipo" onclick="closeMenu()">Equipo</a>
+      <a href="#contacto" onclick="closeMenu()">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-inner fade">
+      <div class="hero-line"></div>
+      <h1 class="hero-title">Consultoría estratégica para clubes de fútbol</h1>
+      <p class="hero-desc">Ayudamos a clubes profesionales a maximizar ingresos, diversificar sus fuentes de negocio y construir estructuras comerciales sostenibles mediante un enfoque estratégico integral.</p>
+      <p class="hero-tagline">Experiencia internacional en estrategia y gestión en el fútbol profesional.</p>
+      <a href="#contacto" class="btn-accent">Solicitar Reunión</a>
+    </div>
+  </div>
+  <div class="hero-fade"></div>
+</section>
+
+<!-- ABOUT -->
+<section id="quienes-somos" class="section-padding">
+  <div class="sec-wrap">
+    <div class="fade">
+      <div class="sec-line"></div>
+      <span class="sec-label">Quiénes Somos</span>
+    </div>
+    <div class="about-grid">
+      <div class="fade">
+        <h2 class="about-title">El partner estratégico de crecimiento para clubes de fútbol</h2>
+      </div>
+      <div class="fade">
+        <div class="about-text">
+          <p><strong>Andes Sports Consulting Agency</strong> es una consultora estratégica especializada en el desarrollo comercial, organizacional y deportivo de clubes de fútbol.</p>
+          <p>Trabajamos junto a instituciones deportivas para fortalecer su estructura, aumentar sus ingresos propios y construir modelos sostenibles que permitan crecer sin depender exclusivamente de la televisión o las transferencias.</p>
+          <p>Nuestro enfoque combina experiencia internacional, conocimiento de la industria del fútbol y una metodología diseñada para la realidad de los clubes en Sudamérica.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="servicios" class="section-padding">
+  <div class="sec-wrap-sm">
+    <div class="fade">
+      <div class="sec-line"></div>
+      <span class="sec-label">Servicios</span>
+      <h2 class="sec-title">Qué hacemos</h2>
+      <p class="sec-sub">Intervenimos sobre los pilares que determinan la sostenibilidad estructural de un club deportivo.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade">
+        <h3>Partners<br>&amp; Comercial</h3>
+        <p class="service-lead">Estructuramos el área comercial del club para maximizar el valor de sus activos y generar ingresos sostenibles.</p>
+        <p class="service-desc">Desde la auditoría de activos hasta la construcción de propuestas de valor y la captación de marcas, transformamos el sponsorship en un pilar estratégico del club.</p>
+      </div>
+      <div class="service-card fade">
+        <h3>Ticketing<br>&amp; Matchday</h3>
+        <p class="service-lead">Convertimos el estadio en una plataforma de ingresos y experiencia.</p>
+        <p class="service-desc">Diseñamos estrategias de precios, segmentación y propuestas comerciales para aumentar la asistencia, mejorar el ticket promedio y potenciar el consumo durante el matchday.</p>
+      </div>
+      <div class="service-card fade">
+        <h3>Fan Engagement<br>&amp; Digital</h3>
+        <p class="service-lead">Transformamos la audiencia del club en un activo comercial.</p>
+        <p class="service-desc">Ordenamos la relación con los fans, mejoramos la comunicación y potenciamos la conversión hacia ingresos a través de ticketing, socios y productos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section id="metodologia" class="section-padding">
+  <div class="sec-wrap">
+    <div class="fade">
+      <div class="sec-line"></div>
+      <span class="sec-label">Metodología</span>
+      <h2 class="sec-title">Metodología 360° Revenue Growth</h2>
+      <p class="sec-sub">Un modelo integral de diagnóstico, diseño, implementación y medición continua para el crecimiento sostenible de ingresos.</p>
+    </div>
+    <div class="method-grid">
+      <div class="fade">
+        <div class="method-num">01</div>
+        <div class="method-divider"></div>
+        <h3 class="method-title">Diagnóstico</h3>
+        <ul class="method-list">
+          <li><span class="method-dot"></span>Auditoría integral del club</li>
+          <li><span class="method-dot"></span>Análisis de ingresos y activos</li>
+          <li><span class="method-dot"></span>Revisión comercial</li>
+          <li><span class="method-dot"></span>Análisis digital</li>
+          <li><span class="method-dot"></span>Análisis de estadio</li>
+        </ul>
+      </div>
+      <div class="fade">
+        <div class="method-num">02</div>
+        <div class="method-divider"></div>
+        <h3 class="method-title">Estrategia</h3>
+        <ul class="method-list">
+          <li><span class="method-dot"></span>Definición de prioridades</li>
+          <li><span class="method-dot"></span>Diseño del plan estratégico</li>
+          <li><span class="method-dot"></span>Plan comercial</li>
+          <li><span class="method-dot"></span>KPIs y métricas</li>
+        </ul>
+      </div>
+      <div class="fade">
+        <div class="method-num">03</div>
+        <div class="method-divider"></div>
+        <h3 class="method-title">Implementación</h3>
+        <ul class="method-list">
+          <li><span class="method-dot"></span>Trabajo conjunto con el club</li>
+          <li><span class="method-dot"></span>Desarrollo comercial</li>
+          <li><span class="method-dot"></span>Activación de sponsors</li>
+          <li><span class="method-dot"></span>Ticketing y digital</li>
+        </ul>
+      </div>
+      <div class="fade">
+        <div class="method-num">04</div>
+        <div class="method-divider"></div>
+        <h3 class="method-title">Seguimiento y optimización</h3>
+        <ul class="method-list">
+          <li><span class="method-dot"></span>Seguimiento continuo</li>
+          <li><span class="method-dot"></span>Medición de resultados</li>
+          <li><span class="method-dot"></span>Ajustes estratégicos</li>
+          <li><span class="method-dot"></span>Evaluación de impacto</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="equipo" class="section-padding">
+  <div class="sec-wrap">
+    <div class="fade">
+      <div class="sec-line"></div>
+      <span class="sec-label">Equipo</span>
+      <h2 class="sec-title">Los socios fundadores de ASCA</h2>
+      <p class="sec-sub">Cinco profesionales con formación MBA y experiencia internacional en fútbol, negocios y gestión deportiva.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-member fade">
+        <div class="team-avatar">Foto</div>
+        <h3 class="team-name">Socio 1</h3>
+        <p class="team-role">Estrategia Comercial</p>
+        <a href="#" class="team-li" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+      <div class="team-member fade">
+        <div class="team-avatar">Foto</div>
+        <h3 class="team-name">Socio 2</h3>
+        <p class="team-role">Ticketing &amp; Matchday</p>
+        <a href="#" class="team-li" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+      <div class="team-member fade">
+        <div class="team-avatar">Foto</div>
+        <h3 class="team-name">Socio 3</h3>
+        <p class="team-role">Fan Engagement &amp; Digital</p>
+        <a href="#" class="team-li" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+      <div class="team-member fade">
+        <div class="team-avatar">Foto</div>
+        <h3 class="team-name">Socio 4</h3>
+        <p class="team-role">Desarrollo de Negocios</p>
+        <a href="#" class="team-li" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+      <div class="team-member fade">
+        <div class="team-avatar">Foto</div>
+        <h3 class="team-name">Socio 5</h3>
+        <p class="team-role">Gestión Deportiva</p>
+        <a href="#" class="team-li" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ASCA -->
+<section class="why-bg section-padding">
+  <div class="sec-wrap">
+    <div class="fade">
+      <div class="sec-line"></div>
+      <span class="sec-label">Por qué ASCA</span>
+      <h2 class="sec-title" style="margin-bottom:4rem">Ayudamos a los clubes a:</h2>
+    </div>
+    <div class="why-grid fade">
+      <div class="why-item">
+        <svg class="why-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Identificar ingresos no explotados</span>
+      </div>
+      <div class="why-item">
+        <svg class="why-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Profesionalizar el área comercial</span>
+      </div>
+      <div class="why-item">
+        <svg class="why-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Aumentar el valor de los patrocinadores</span>
+      </div>
+      <div class="why-item">
+        <svg class="why-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Monetizar la audiencia digital</span>
+      </div>
+      <div class="why-item">
+        <svg class="why-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Desarrollar el estadio como activo</span>
+      </div>
+      <div class="why-item">
+        <svg class="why-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Reducir la dependencia de TV</span>
+      </div>
+      <div class="why-item">
+        <svg class="why-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Construir modelos sostenibles</span>
+      </div>
+      <div class="why-item">
+        <svg class="why-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Conectar mejor con la afición</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="fade">
+    <h2>¿Listos para llevar los ingresos de su club al siguiente nivel?</h2>
+    <p>Agenda una reunión de diagnóstico inicial con nuestro equipo.</p>
+    <a href="#contacto" class="btn-accent">Solicitar reunión</a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contacto">
+  <div class="contact-grid">
+    <div class="fade">
+      <div class="sec-line"></div>
+      <span class="sec-label" style="color:var(--accent)">Contacto</span>
+      <h2 class="sec-title sec-title-white" style="margin-top:1.5rem;margin-bottom:1.5rem">Trabajemos juntos</h2>
+      <p style="color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:2.5rem">Trabajamos junto a clubes y organizaciones deportivas en el desarrollo de proyectos estratégicos y modelos sostenibles.</p>
+      <div class="contact-mail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" style="color:var(--accent)"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+        <a href="mailto:contacto@andescaglobal.com" style="color:rgba(255,255,255,.8);text-decoration:none;font-size:.875rem;transition:color .2s;">contacto@andescaglobal.com</a>
+      </div>
+    </div>
+    <div class="fade">
+      <form class="form" onsubmit="handleSubmit(event)">
+        <div class="form-field">
+          <label class="form-label">Nombre</label>
+          <input type="text" id="f-nombre" required class="form-input" placeholder="">
+        </div>
+        <div class="form-field">
+          <label class="form-label">Email</label>
+          <input type="email" id="f-email" required class="form-input" placeholder="">
+        </div>
+        <div class="form-field">
+          <label class="form-label">Club / Organización</label>
+          <input type="text" id="f-club" required class="form-input" placeholder="">
+        </div>
+        <div class="form-field">
+          <label class="form-label">Mensaje</label>
+          <textarea id="f-mensaje" required rows="4" class="form-input" placeholder=""></textarea>
+        </div>
+        <button type="submit" class="btn-accent" style="align-self:flex-start">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Enviar
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <span class="footer-logo-text">ASCA Global</span>
+      <p class="footer-tagline">Consultoría estratégica para clubes de fútbol</p>
+    </div>
+    <div>
+      <span class="footer-col-label">Contacto</span>
+      <a href="mailto:contacto@andescaglobal.com" style="color:rgba(255,255,255,.8);text-decoration:none;font-size:.875rem;transition:color .2s;">contacto@andescaglobal.com</a>
+    </div>
+    <div>
+      <span class="footer-col-label">Redes</span>
+      <a href="https://www.linkedin.com/company/ascaglobal" target="_blank" rel="noopener" class="footer-link">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+  <hr class="footer-divider">
+  <p class="footer-copy">© 2026 ASCA — Andes Sports Consulting Agency. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50));
+
+// Mobile menu
+function toggleMenu(){
+  const m=document.getElementById('mobile-menu');
+  const mi=document.getElementById('menu-icon');
+  const ci=document.getElementById('close-icon');
+  const open=m.classList.toggle('open');
+  mi.style.display=open?'none':'block';
+  ci.style.display=open?'block':'none';
+}
+function closeMenu(){
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.getElementById('menu-icon').style.display='block';
+  document.getElementById('close-icon').style.display='none';
+}
+
+// Fade in
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
+},{threshold:.1});
+document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+
+// Form submit
+f
